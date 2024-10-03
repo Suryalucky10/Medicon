@@ -1,2 +1,2 @@
 # Medicon
-A project  Hospital website
+A project for Hospital website
