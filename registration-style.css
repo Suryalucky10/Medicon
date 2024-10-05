@@ -1,0 +1,126 @@
+/* General Styling */
+body {
+    background: linear-gradient(135deg, #a2c2e6,#e7f1ff);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container */
+.main-bg {
+    padding: 60px 0;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    background: #ffffff;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.session-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.session-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.session-card-header {
+    background: #007bff;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Accordion Styling */
+.custom-accordion-button {
+    background-color: #0056b3;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-accordion-button:not(.collapsed) {
+    background-color: #0069d9;
+    color: #fff;
+}
+
+.custom-accordion-button:hover {
+    background-color: #0062cc;
+    transform: scale(1.05);
+}
+
+/* Accordion Body */
+.accordion-body {
+    background: #f8f9fa;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Input Fields */
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons */
+.btn {
+    transition: all 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Icons */
+i {
+    font-size: 1.2em;
+}
+
+/* Text and Headers */
+h1, h2 {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem; /* Adjust for smaller screens */
+    }
+}
+
+/* Additional Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Miscellaneous */
+p {
+    font-size: 1.1rem;
+}
+
+.text-success {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Button Disabled State */
+.btn:disabled {
+    background-color: #c0c0c0;
+    color: #fff;
+    cursor: not-allowed;
+}

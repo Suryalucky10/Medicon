@@ -1,0 +1,52 @@
+/* General Body Styling */
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    background: #ffffff;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Styling */
+i {
+    color: #007bff; /* Change icon color */
+    margin-right: 8px;
+}
+
+/* Button Styling */
+.btn-warning {
+    border-radius: 8px;
+}
+
+/* Border for Profile Sections */
+.border {
+    border: 1px solid #e0e0e0;
+}
+
+/* Rounded Corners */
+.rounded {
+    border-radius: 10px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-in-out;
+}

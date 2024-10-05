@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan and Share</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="scan-style.css"> <!-- Link to the new CSS file -->
+    <!-- jsQR Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsqr/1.4.0/jsqr.min.js"></script>
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Scan QR Code</h2>
+
+        <div class="text-center mb-4">
+            <video id="video" width="100%" height="auto" autoplay></video>
+            <div class="mt-3">
+                <button id="capture" class="btn btn-primary">Capture Image</button>
+            </div>
+        </div>
+
+        <h4 class="text-center">Captured Image:</h4>
+        <div class="text-center">
+            <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+            <img id="capturedImage" src="" alt="Captured Image" class="img-fluid" style="display:none;"/>
+        </div>
+
+        <div class="text-center mt-4">
+            <h4>Extracted URL:</h4>
+            <p id="extractedURL" class="text-primary"></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <script src="scan-script.js"></script>
+</body>
+</html>

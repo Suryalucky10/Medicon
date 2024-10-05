@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABHA Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="login-style.css">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+        <!-- Main Login Card -->
+        <div class="card login-card shadow-lg p-4">
+            <h2 class="text-center mb-4">ABHA Login</h2>
+            <p class="text-center text-muted mb-4">Choose your preferred login method to access your ABHA account</p>
+
+            <!-- Tabs for Login Methods -->
+            <ul class="nav nav-tabs mb-4" id="loginTab" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="aadhaar-tab" data-bs-toggle="tab" data-bs-target="#aadhaar" role="tab" aria-controls="aadhaar" aria-selected="true">
+                        <i class="fas fa-id-card"></i> Aadhaar OTP
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="mobile-tab" data-bs-toggle="tab" data-bs-target="#mobile" role="tab" aria-controls="mobile" aria-selected="false">
+                        <i class="fas fa-mobile-alt"></i> Mobile OTP
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="abha-tab" data-bs-toggle="tab" data-bs-target="#abha" role="tab" aria-controls="abha" aria-selected="false">
+                        <i class="fas fa-user-shield"></i> ABHA OTP
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="password-tab" data-bs-toggle="tab" data-bs-target="#password" role="tab" aria-controls="password" aria-selected="false">
+                        <i class="fas fa-key"></i> Password Login
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab Content for Each Login Method -->
+            <div class="tab-content" id="loginTabContent">
+                <!-- Aadhaar OTP Login -->
+                <div class="tab-pane fade show active" id="aadhaar" role="tabpanel" aria-labelledby="aadhaar-tab">
+                    <form id="aadhaarForm">
+                        <div class="mb-3">
+                            <label for="aadhaarNumber" class="form-label">Aadhaar Number</label>
+                            <input type="text" class="form-control" id="aadhaarNumber" placeholder="Enter your Aadhaar Number" required>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" onclick="generateAadhaarOTP()">Generate OTP</button>
+                        <div class="mb-3 mt-3">
+                            <label for="aadhaarOtp" class="form-label">OTP</label>
+                            <input type="text" class="form-control" id="aadhaarOtp" placeholder="Enter the OTP" required>
+                        </div>
+                        <button type="button" class="btn btn-success w-100" onclick="loginViaAadhaar()">Login</button>
+                    </form>
+                </div>
+
+                <!-- Mobile OTP Login -->
+                <div class="tab-pane fade" id="mobile" role="tabpanel" aria-labelledby="mobile-tab">
+                    <form id="mobileForm">
+                        <div class="mb-3">
+                            <label for="mobileNumber" class="form-label">Mobile Number</label>
+                            <input type="text" class="form-control" id="mobileNumber" placeholder="Enter your Mobile Number" required>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" onclick="generateMobileOTP()">Generate OTP</button>
+                        <div class="mb-3 mt-3">
+                            <label for="mobileOtp" class="form-label">OTP</label>
+                            <input type="text" class="form-control" id="mobileOtp" placeholder="Enter the OTP" required>
+                        </div>
+                        <button type="button" class="btn btn-success w-100" onclick="loginViaMobile()">Login</button>
+                    </form>
+                </div>
+
+                <!-- ABHA OTP Login -->
+                <div class="tab-pane fade" id="abha" role="tabpanel" aria-labelledby="abha-tab">
+                    <form id="abhaForm">
+                        <div class="mb-3">
+                            <label for="abhaNumber" class="form-label">ABHA Address</label>
+                            <input type="text" class="form-control" id="abhaNumber" placeholder="Enter your ABHA Address" required>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" onclick="generateAbhaOTP()">Generate OTP</button>
+                        <div class="mb-3 mt-3">
+                            <label for="abhaOtp" class="form-label">OTP</label>
+                            <input type="text" class="form-control" id="abhaOtp" placeholder="Enter the OTP" required>
+                        </div>
+                        <button type="button" class="btn btn-success w-100" onclick="loginViaAbha()">Login</button>
+                    </form>
+                </div>
+
+                <!-- Password Login -->
+                <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+                    <form id="passwordForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username (ABHA Address or Mobile Number)</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                        </div>
+                        <button type="button" class="btn btn-success w-100" onclick="loginViaPassword()">Login</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- New User Registration Button -->
+            <div class="text-center mt-3">
+                <a href="registration-page.html" class="btn btn-link">New User? Register Here</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <!-- Link to the JavaScript file -->
+    <script src="login-script.js"></script>
+</body>
+</html>

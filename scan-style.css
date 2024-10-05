@@ -1,0 +1,56 @@
+/* General Body Styling */
+body {
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container Styling */
+.container {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+/* Video Element Styling */
+#video {
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+.btn {
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Captured Image Styling */
+#capturedImage {
+    margin-top: 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
+/* Extracted URL Styling */
+#extractedURL {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Additional Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h2, h4 {
+    animation: fadeIn 0.8s ease-in-out;
+}

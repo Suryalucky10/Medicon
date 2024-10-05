@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABHA Profile Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="update-style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ABHA Profile Management</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#updatePersonalInfo">Update Personal Information</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#updateMobile">Update Mobile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#updateEmail">Update Email</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#deactivateABHA">Deactivate ABHA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reactivateABHA">Reactivate ABHA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#deleteABHA">Delete ABHA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reKYC">Re-KYC</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#setPassword">Set Password</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#updatePassword">Update Password</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container my-5">
+        <!-- Update Personal Information Section -->
+        <div id="updatePersonalInfo" class="card shadow-sm mb-5 p-4">
+            <h3 class="card-title">Update Personal Information</h3>
+            <form id="updatePersonalInfoForm">
+                <div class="mb-3">
+                    <label for="profileIdInfo" class="form-label">Profile ID</label>
+                    <input type="text" class="form-control" id="profileIdInfo" placeholder="Enter your Profile ID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="newName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="newName" placeholder="Enter your new name">
+                </div>
+                <div class="mb-3">
+                    <label for="newAge" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="newAge" placeholder="Enter your new age">
+                </div>
+                <div class="mb-3">
+                    <label for="newGender" class="form-label">Gender</label>
+                    <select class="form-select" id="newGender">
+                        <option value="">Select your new gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="newHealthCondition" class="form-label">Health Condition</label>
+                    <textarea class="form-control" id="newHealthCondition" placeholder="Describe your new health condition"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="newAadhaar" class="form-label">Aadhaar Number</label>
+                    <input type="text" class="form-control" id="newAadhaar" placeholder="Enter your new Aadhaar number">
+                </div>
+                <div class="mb-3">
+                    <label for="newDrivingLicense" class="form-label">Driving License Number</label>
+                    <input type="text" class="form-control" id="newDrivingLicense" placeholder="Enter your new Driving License number">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="updatePersonalInformation()">Update Personal Information</button>
+            </form>
+        </div>
+
+        <!-- Update Mobile Number Section -->
+        <div id="updateMobile" class="card shadow-sm mb-5 p-4">
+            <h3 class="card-title">Update Mobile Number</h3>
+            <form id="updateMobileForm">
+                <div class="mb-3">
+                    <label for="profileIdMobile" class="form-label">Profile ID</label>
+                    <input type="text" class="form-control" id="profileIdMobile" placeholder="Enter your Profile ID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="newPhoneNumber" class="form-label">New Mobile Number</label>
+                    <input type="text" class="form-control" id="newPhoneNumber" placeholder="Enter new mobile number" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="updateMobileNumber()">Update Mobile</button>
+            </form>
+        </div>
+
+        <!-- Update Email Address Section -->
+        <div id="updateEmail" class="card shadow-sm mb-5 p-4">
+            <h3 class="card-title">Update Email Address</h3>
+            <form id="updateEmailForm">
+                <div class="mb-3">
+                    <label for="profileIdEmail" class="form-label">Profile ID</label>
+                    <input type="text" class="form-control" id="profileIdEmail" placeholder="Enter your Profile ID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="newEmailAddress" class="form-label">New Email Address</label>
+                    <input type="email" class="form-control" id="newEmailAddress" placeholder="Enter new email address" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="updateEmailAddress()">Update Email</button>
+            </form>
+        </div>
+
+        <!-- Deactivate ABHA Number Section -->
+        <div id="deactivateABHA" class="card shadow-sm mb-5 p-4">
+            <h3 class="card-title">Deactivate ABHA</h3>
+            <form id="deactivateABHAForm">
+                <div class="mb-3">
+                    <label for="profileIdDeactivate" class="form-label">Profile ID</label>
+                    <input type="text" class="form-control" id="profileIdDeactivate" placeholder="Enter your Profile ID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="deactivateReason" class="form-label">Reason for Deactivation</label>
+                    <textarea class="form-control" id="deactivateReason" placeholder="Enter the reason for deactivation" rows="3" required></textarea>
+                </div>
+                <button type="button" class="btn btn-warning" onclick="deactivateABHA()">Deactivate</button>
+            </form>
+        </div>
+
+        <!-- Reactivate ABHA Number Section -->
+        <div id="reactivateABHA" class="card shadow-sm mb-5 p-4">
+            <h3 class="card-title">Reactivate ABHA</h3>
+            <form id="reactivateABHAForm">
+                <div class="mb-3">
+                    <label for="profileIdReactivate" class="form-label">Profile ID</label>
+                    <input type="text" class="form-control" id="profileIdReactivate" placeholder="Enter your Profile ID" required>
+                </div>
+                <button type="button" class="btn btn-success" onclick="reactivateABHA()">Reactivate</button>
+            </form>
+        </div>
+
+        <!-- Delete ABHA Number Section -->
+        <div id="deleteABHA" class="card shadow-sm mb-5 p-4">
+            <h3 class="card-title">Delete ABHA</h3>
+            <form id="deleteABHAForm">
+                <div class="mb-3">
+                    <label for="profileIdDelete" class="form-label">Profile ID</label>
+                    <input type="text" class="form-control" id="profileIdDelete" placeholder="Enter your Profile ID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="deleteReason" class="form-label">Reason for Deletion</label>
+                    <textarea class="form-control" id="deleteReason" placeholder="Enter the reason for deletion" rows="3" required></textarea>
+                </div>
+                <button type="button" class="btn btn-danger" onclick="deleteABHA()">Delete</button>
+            </form>
+        </div>
+
+        <!-- Re-KYC Section -->
+        <div id="reKYC" class="card shadow-sm mb-5 p-4">
+            <h3 class="card-title">Re-KYC</h3>
+            <form id="reKYCForm">
+                <div class="mb-3">
+                    <label for="profileIdKYC" class="form-label">Profile ID</label>
+                    <input type="text" class="form-control" id="profileIdKYC" placeholder="Enter your Profile ID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="kycData" class="form-label">KYC Data</label>
+                    <textarea class="form-control" id="kycData" placeholder="Enter new KYC data" rows="3" required></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="reKYC()">Submit KYC</button>
+            </form>
+        </div>
+
+        <!-- Set Password Section -->
+        <div id="setPassword" class="card shadow-sm mb-5 p-4">
+            <h3 class="card-title">Set Password</h3>
+            <form id="setPasswordForm">
+                <div class="mb-3">
+                    <label for="profileIdSet" class="form-label">Profile ID</label>
+                    <input type="text" class="form-control" id="profileIdSet" placeholder="Enter your Profile ID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="newPassword" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="newPassword" placeholder="Enter new password" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="setPassword()">Set Password</button>
+            </form>
+        </div>
+
+        <!-- Update Password Section -->
+        <div id="updatePassword" class="card shadow-sm mb-5 p-4">
+            <h3 class="card-title">Update Password</h3>
+            <form id="updatePasswordForm">
+                <div class="mb-3">
+                    <label for="profileIdUpdate" class="form-label">Profile ID</label>
+                    <input type="text" class="form-control" id="profileIdUpdate" placeholder="Enter your Profile ID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="oldPassword" class="form-label">Old Password</label>
+                    <input type="password" class="form-control" id="oldPassword" placeholder="Enter old password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="newPasswordUpdate" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="newPasswordUpdate" placeholder="Enter new password" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="updatePassword()">Update Password</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="update-script.js"></script>
+</body>
+</html>
